@@ -5,10 +5,12 @@
 #include "CoreMinimal.h"
 #include "Widgets/SCompoundWidget.h"
 #include "SBox.h"
+#include "SIAiTypes.h"
 #include "STextBlock.h"
 
 class STextBlock;
 class SBox;
+class SVerticalBox;
 
 /**
  * 
@@ -24,7 +26,11 @@ public:
 	void Construct(const FArguments& InArgs);
 
 private:
+	void MenuItemOnclicked(EMenuItem::Type ItemType);
+	
+private:
 	TSharedPtr<SBox> RootSizeBox;
 	const struct FSIAiMenuStyle *MenuStyle;
 	TSharedPtr<STextBlock> TitleText;
+	TSharedPtr<SVerticalBox> ContentBox;
 };

@@ -6,6 +6,7 @@
 #include "Styling/SlateWidgetStyle.h"
 #include "SlateWidgetStyleContainerBase.h"
 #include "SlateBrush.h"
+#include "SlateFontInfo.h"
 
 #include "SIAiMenuWidgetStyle.generated.h"
 
@@ -40,7 +41,18 @@ struct MYSIAICOURSE_API FSIAiMenuStyle : public FSlateWidgetStyle
 
 	UPROPERTY(EditAnywhere, Category = Menu)
 	FSlateBrush TitleBorderBrush;
-	
+
+	UPROPERTY(EditAnywhere, Category = Menu)
+	FSlateBrush MenuItemBrush;
+
+	UPROPERTY(EditAnywhere, Category = Common)
+	FSlateFontInfo Font_60;
+
+	UPROPERTY(EditAnywhere, Category = Common)
+	FSlateFontInfo Font_40;
+
+	UPROPERTY(EditAnywhere, Category = Common)
+	FSlateFontInfo Font_30;
 };
 
 /**
