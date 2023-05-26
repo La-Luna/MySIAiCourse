@@ -7,12 +7,16 @@
 #include "SIAiMenuWidgetStyle.h"
 #include "SImage.h"
 #include "SOverlay.h"
+#include "Internationalization.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
 void SSIAiMenuWidget::Construct(const FArguments& InArgs)
 {
 	MenuStyle = &SIAiStyle::Get().GetWidgetStyle<FSIAiMenuStyle>("BPSIAiMenuStyle");
+
+	FInternationalization::Get().SetCurrentCulture(TEXT("zh"));
+	
 	ChildSlot
 	[
 		SAssignNew(RootSizeBox,SBox)
@@ -48,7 +52,7 @@ void SSIAiMenuWidget::Construct(const FArguments& InArgs)
 					SNew(SBorder).BorderImage(&MenuStyle->TitleBorderBrush).HAlign(HAlign_Center).VAlign(VAlign_Center)
 					[
 						SAssignNew(TitleText,STextBlock).Font(SIAiStyle::Get().GetFontStyle("MenuItemFont"))
-						.Text(FText::FromString("Luna"))
+						.Text(NSLOCTEXT("SIAiMenu","Menu","Menu"))
 					]
 				]
 			]
