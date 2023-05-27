@@ -27,7 +27,7 @@ public:
 
 private:
 	void MenuItemOnclicked(EMenuItem::Type ItemType);
-	
+	void ChangeCulture(ECultureTeam Culture);
 private:
 	TSharedPtr<SBox> RootSizeBox;
 	const struct FSIAiMenuStyle *MenuStyle;

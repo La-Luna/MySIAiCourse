@@ -8,9 +8,13 @@
 #include "SImage.h"
 #include "SOverlay.h"
 #include "Internationalization.h"
+#include "SIAiDataHandle.h"
 #include "SIAiTypes.h"
 #include "SSIAiMenuItemWidget.h"
 #include "VerticalBox.h"
+#include "SIAiHelper.h"
+#include "SSIAiGameOptionWidget.h"
+#include "SSIAiGameOptionWidget.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
@@ -75,16 +79,26 @@ void SSIAiMenuWidget::Construct(const FArguments& InArgs)
 	RootSizeBox->SetHeightOverride(510.f);
 
 	ContentBox->AddSlot()[
+		 /*
 		 SNew(SSIAiMenuItemWidget)
 		 .ItemText(NSLOCTEXT("SIAiMenu","StartGame","StartGame"))
 		 .ItemType(EMenuItem::StartGame)
 		 .OnClicked(this,&SSIAiMenuWidget::MenuItemOnclicked)
+	*/
+		SNew(SSIAiGameOptionWidget).ChangeCulture(this, &SSIAiMenuWidget::ChangeCulture)
+
 	];
 }
 
 void SSIAiMenuWidget::MenuItemOnclicked(EMenuItem::Type ItemType)
 {
-	TitleText->SetText(NSLOCTEXT("SIAiMenu","StartGame","StartGame"));
+	//TitleText->SetText(NSLOCTEXT("SIAiMenu","StartGame","StartGame"));
+	SIAiHelper::Debug(FString("test"),5.f);
+}
+
+void SSIAiMenuWidget::ChangeCulture(ECultureTeam Culture)
+{
+	SIAiDataHandle::Get()->ChangeLocalizationCulture(Culture);
 }
 
 END_SLATE_FUNCTION_BUILD_OPTIMIZATION

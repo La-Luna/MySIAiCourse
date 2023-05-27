@@ -11,6 +11,6 @@ ASIAiMenuController::ASIAiMenuController()
 void ASIAiMenuController::BeginPlay()
 {
 	FInputModeUIOnly InputMode;
-	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::LockAlways);
+	InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 	SetInputMode(InputMode);
 }

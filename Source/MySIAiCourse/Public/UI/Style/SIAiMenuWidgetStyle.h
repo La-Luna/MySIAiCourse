@@ -53,6 +53,23 @@ struct MYSIAICOURSE_API FSIAiMenuStyle : public FSlateWidgetStyle
 
 	UPROPERTY(EditAnywhere, Category = Common)
 	FSlateFontInfo Font_30;
+
+	UPROPERTY(EditAnywhere, Category = GameOption)
+	FSlateBrush GameOptionBGBrush;
+
+	UPROPERTY(EditAnywhere, Category = Common)
+	FLinearColor FontColor_White;
+	
+	UPROPERTY(EditAnywhere, Category = Common)
+	FLinearColor FontColor_Black;
+
+	UPROPERTY(EditAnywhere, Category = GameOption)
+	FSlateBrush CheckedBoxBrush;
+
+	UPROPERTY(EditAnywhere, Category = GameOption)
+	FSlateBrush UnCheckedBoxBrush;
+	
+	
 };
 
 /**

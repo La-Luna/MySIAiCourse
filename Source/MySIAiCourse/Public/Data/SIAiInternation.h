@@ -30,7 +30,7 @@ public:
 	SIAiInternation::Register(LOCTEXT("EnterRecord","EnterRecord"));
 	SIAiInternation::Register(LOCTEXT("RecordNameHint","Input Record Name!"));
 	SIAiInternation::Register (LOCTEXT("NameRepeatedHint","Record Name Repeated!"));
-	SIAiInternation::Register(LOCTEXT("Chinese","Chinease"));
+	SIAiInternation::Register(LOCTEXT("Chinese","Chinese"));
 	SIAiInternation::Register(LOCTEXT("English","English"));
 	SIAiInternation::Register(LOCTEXT("Music","Music"));
 	SIAiInternation::Register(LOCTEXT("Sound","Sound"));

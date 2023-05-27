@@ -5,6 +5,7 @@
 TSharedPtr<SIAiDataHandle> SIAiDataHandle::DataInstance = NULL;
 SIAiDataHandle::SIAiDataHandle()
 {
+	CurrentCulture = ECultureTeam::ZH;
 }
 
 void SIAiDataHandle::Initilize()
