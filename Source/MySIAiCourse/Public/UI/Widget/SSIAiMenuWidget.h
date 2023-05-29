@@ -28,6 +28,8 @@ public:
 private:
 	void MenuItemOnclicked(EMenuItem::Type ItemType);
 	void ChangeCulture(ECultureTeam Culture);
+	void ChangeVolume(const float MusicVolume, const float SoundVolume);
+	
 private:
 	TSharedPtr<SBox> RootSizeBox;
 	const struct FSIAiMenuStyle *MenuStyle;

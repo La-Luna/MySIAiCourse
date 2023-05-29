@@ -7,6 +7,7 @@
 #include "SlateWidgetStyleContainerBase.h"
 #include "SlateBrush.h"
 #include "SlateFontInfo.h"
+#include "SlateTypes.h"
 
 #include "SIAiMenuWidgetStyle.generated.h"
 
@@ -68,7 +69,12 @@ struct MYSIAICOURSE_API FSIAiMenuStyle : public FSlateWidgetStyle
 
 	UPROPERTY(EditAnywhere, Category = GameOption)
 	FSlateBrush UnCheckedBoxBrush;
-	
+
+	UPROPERTY(EditAnywhere, Category = GameOption)
+	FSlateBrush SliderBarBrush;
+
+	UPROPERTY(EditAnywhere, Category = GameOption)
+	FSliderStyle SliderStyle;
 	
 };
 

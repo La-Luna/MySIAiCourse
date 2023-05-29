@@ -85,7 +85,7 @@ void SSIAiMenuWidget::Construct(const FArguments& InArgs)
 		 .ItemType(EMenuItem::StartGame)
 		 .OnClicked(this,&SSIAiMenuWidget::MenuItemOnclicked)
 	*/
-		SNew(SSIAiGameOptionWidget).ChangeCulture(this, &SSIAiMenuWidget::ChangeCulture)
+		SNew(SSIAiGameOptionWidget).ChangeCulture(this, &SSIAiMenuWidget::ChangeCulture).ChangeVolume(this, &SSIAiMenuWidget::ChangeVolume)
 
 	];
 }
@@ -99,6 +99,11 @@ void SSIAiMenuWidget::MenuItemOnclicked(EMenuItem::Type ItemType)
 void SSIAiMenuWidget::ChangeCulture(ECultureTeam Culture)
 {
 	SIAiDataHandle::Get()->ChangeLocalizationCulture(Culture);
+}
+
+void SSIAiMenuWidget::ChangeVolume(const float MusicVolume, const float SoundVolume)
+{
+	SIAiDataHandle::Get()->ResetMenuVolume(MusicVolume, SoundVolume);
 }
 
 END_SLATE_FUNCTION_BUILD_OPTIMIZATION
