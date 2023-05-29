@@ -48,6 +48,7 @@ void SIAiDataHandle::ChangeLocalizationCulture(ECultureTeam Culture)
 
 	}
 	CurrentCulture = Culture;
+	SIAiSingleton<SIAiJsonHandle>::Get()->UpdateRecordData(GetEnumValueAsString<ECultureTeam>(FString("ECultureTeam"), CurrentCulture), MusicVolume, SoundVolume, &RecordDataList);
 }
 
 void SIAiDataHandle::ResetMenuVolume(float MusicVol, float SoundVol)
@@ -60,6 +61,7 @@ void SIAiDataHandle::ResetMenuVolume(float MusicVol, float SoundVol)
 	{
 		SoundVolume = SoundVol;
 	}
+	SIAiSingleton<SIAiJsonHandle>::Get()->UpdateRecordData(GetEnumValueAsString<ECultureTeam>(FString("ECultureTeam"), CurrentCulture), MusicVolume, SoundVolume, &RecordDataList);
 }
 
 
@@ -95,12 +97,13 @@ void SIAiDataHandle::InitRecordData()
 {
 	FString Culture;
 	SIAiSingleton<SIAiJsonHandle>::Get()->RecordDataJsonRead(Culture,MusicVolume,SoundVolume,RecordDataList);
-	SIAiHelper::Debug(Culture+FString("--")+FString::SanitizeFloat(MusicVolume)+FString("--")+FString::SanitizeFloat(SoundVolume),20.f);
-
 	ChangeLocalizationCulture(GetEnumValueFromString<ECultureTeam>(FString("ECultureTeam"),Culture));
-	
+
+	/*SIAiHelper::Debug(Culture+FString("--")+FString::SanitizeFloat(MusicVolume)+FString("--")+FString::SanitizeFloat(SoundVolume),20.f);
 	for(TArray<FString>::TIterator It(RecordDataList);It;It++)
 	{
 		SIAiHelper::Debug(*It,20.f);
-	}
+	}*/
+
+	
 }
