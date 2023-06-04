@@ -15,6 +15,8 @@
 #include "SIAiHelper.h"
 #include "SSIAiGameOptionWidget.h"
 #include "SSIAiGameOptionWidget.h"
+#include "SSIAiNewGameWidget.h"
+#include "SSIAiChooseRecordWidget.h"
 
 BEGIN_SLATE_FUNCTION_BUILD_OPTIMIZATION
 
@@ -85,8 +87,8 @@ void SSIAiMenuWidget::Construct(const FArguments& InArgs)
 		 .ItemType(EMenuItem::StartGame)
 		 .OnClicked(this,&SSIAiMenuWidget::MenuItemOnclicked)
 	*/
-		SNew(SSIAiGameOptionWidget).ChangeCulture(this, &SSIAiMenuWidget::ChangeCulture).ChangeVolume(this, &SSIAiMenuWidget::ChangeVolume)
-
+		//SNew(SSIAiGameOptionWidget).ChangeCulture(this, &SSIAiMenuWidget::ChangeCulture).ChangeVolume(this, &SSIAiMenuWidget::ChangeVolume)
+		SNew(SSIAiNewGameWidget)
 	];
 }
 
